@@ -2,7 +2,7 @@
 
 [![NuGet Publishing](https://github.com/hypeproxy/orchestrator/actions/workflows/publish.yml/badge.svg)](https://github.com/hypeproxy/orchestrator/actions/workflows/publish.yml)
 ![Net8](https://img.shields.io/badge/.NET-8.0%20LTS-blue)
-![HypeProxy](https://img.shields.io/badge/HypeProxy.io-Infrastructure-yellow)
+![MIT](https://img.shields.io/badge/MIT-License-yellow)
 
 ## Introduction
 
