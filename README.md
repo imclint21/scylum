@@ -13,7 +13,7 @@ With an intuitive and extensible API, here’s an overview of Scylum’s core fe
 - **Unified Service Management**: Simplifies service creation and dependency injection, allowing services to interact with each other seamlessly.
 - **Base Controller Wrapping**: Offers a standardized base controller to manage claims and user data access, reducing boilerplate code.
 - **Routing Conventions**: Supports customizable routing conventions, including options like kebab-case for cleaner and more consistent URLs.
-- **Standardized Result Handling**: Provides a unified response format with BaseResult to ensure consistent response handling across services.
+- **Standardized Result Handling**: Provides a unified response format with `BaseResult` to ensure consistent response handling across services.
 
 ## Getting Started
 
