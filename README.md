@@ -41,3 +41,28 @@ app.UseAuthorization();
 app.MapControllers();
 app.Run();
 ```
+
+3. Example of a Controller
+
+Here’s an example of a simple BikesController using Scylum:
+
+```cshapr
+public class BikesController(BikeService service) : BaseController<BikeService>(service)
+{
+	[HttpPost]
+	[ApiResponse(201, "Bike created successfully.")]
+	public ActionResult Create(CreateBikeRequest request) => Service
+		.Create(request);
+
+	[HttpGet]
+	public IEnumerable<Bike> Get(PaginationParameters pagination) => 
+		Service.Read().ApplyPagination(pagination);
+
+	[HttpGet("{bikeId:guid}")]
+	[ApiResponse(404, "Bike not found.")]
+	public Bike? Get(Guid bikeId) => Service.Read(bikeId);
+
+	[HttpDelete("{bikeId:guid}")]
+	public ActionResult Delete(Guid bikeId) => Service.Delete(bikeId);
+}
+```
