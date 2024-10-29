@@ -46,23 +46,25 @@ app.Run();
 
 Here’s an example of a simple BikesController using Scylum:
 
-```cshapr
+```csharp
 public class BikesController(BikeService service) : BaseController<BikeService>(service)
 {
-	[HttpPost]
-	[ApiResponse(201, "Bike created successfully.")]
-	public ActionResult Create(CreateBikeRequest request) => Service
-		.Create(request);
+    [HttpPost]
+    [ApiResponse(201, "Bike created successfully.")]
+    public ActionResult Create(CreateBikeRequest request) => Service
+        .Create(request);
 
-	[HttpGet]
-	public IEnumerable<Bike> Get(PaginationParameters pagination) => 
-		Service.Read().ApplyPagination(pagination);
+    [HttpGet]
+    public IEnumerable<Bike> Get(PaginationParameters pagination) => 
+        Service.Read().ApplyPagination(pagination);
 
-	[HttpGet("{bikeId:guid}")]
-	[ApiResponse(404, "Bike not found.")]
-	public Bike? Get(Guid bikeId) => Service.Read(bikeId);
+    [HttpGet("{bikeId:guid}")]
+    [ApiResponse(404, "Bike not found.")]
+    public Bike? Get(Guid bikeId) =>
+        Service.Read(bikeId);
 
-	[HttpDelete("{bikeId:guid}")]
-	public ActionResult Delete(Guid bikeId) => Service.Delete(bikeId);
+    [HttpDelete("{bikeId:guid}")]
+    public ActionResult Delete(Guid bikeId) =>
+        Service.Delete(bikeId);
 }
 ```
