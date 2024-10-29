@@ -16,3 +16,28 @@ With an intuitive and extensible API, here’s an overview of Scylum’s core fe
 - *Standardized Result Handling*: Provides a unified response format with BaseResult to ensure consistent response handling across services.
 
 ## Getting Started
+
+To get started with Scylum, follow these steps:
+
+1. Installation: Add Scylum to your project via NuGet:
+
+```bash
+dotnet add package Scylum
+```
+
+2. Service Setup: In your `Program.cs`, register Scylum services and configure routing options:
+
+```bash
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScylum(options =>
+{
+    options.RouteStyle = RoutingStyle.KebabCase; // Customize your routing style here
+});
+
+var app = builder.Build();
+app.UseHttpsRedirection();
+app.UseAuthorization();
+app.MapControllers();
+app.Run();
+```
